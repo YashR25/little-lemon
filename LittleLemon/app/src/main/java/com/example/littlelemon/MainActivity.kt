@@ -10,17 +10,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.littlelemon.navigation.navigationComposable.Navigation
 import com.example.littlelemon.ui.theme.LittleLemonTheme
 import com.example.littlelemon.utils.IS_LOGGED_IN
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        val sharedPreferences = getSharedPreferences("Little_Lemon_DB", MODE_PRIVATE)
-//        sharedPreferences.edit().apply {
-//            putBoolean(IS_LOGGED_IN, false)
-//            apply()
-//        }
         setContent {
             LittleLemonTheme {
                 // A surface container using the 'background' color from the theme
@@ -28,7 +25,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    OnBoarding()
+                    val navController = rememberNavController()
+                    Navigation(navController = navController)
                 }
             }
         }
