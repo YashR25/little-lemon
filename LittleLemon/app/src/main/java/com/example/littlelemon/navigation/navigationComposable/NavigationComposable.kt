@@ -21,7 +21,7 @@ fun Navigation(navController: NavHostController) {
 
     NavHost(navController = navController, startDestination = startDestination){
         composable(Home.route){
-            com.example.littlelemon.screens.Home()
+            com.example.littlelemon.screens.Home(navController)
         }
 
         composable(OnBoarding.route){

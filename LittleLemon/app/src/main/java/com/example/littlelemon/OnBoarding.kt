@@ -18,7 +18,7 @@ import com.example.littlelemon.ui.theme.green
 @Composable
 fun OnBoarding(navController: NavHostController) {
 
-    Scaffold(topBar = {TopBar()}) {paddingValues ->
+    Scaffold(topBar = {TopBar(navHostController = navController, shouldShowProfile = false) }) { paddingValues ->
         Column(
             Modifier
                 .padding(paddingValues)
